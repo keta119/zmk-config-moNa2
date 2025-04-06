@@ -94,6 +94,15 @@
 
             tap-ms = <20>;
         };
+
+        new_behaviorscroll_left_right: new_behaviorscroll_left_right {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
+
+            tap-ms = <20>;
+            label = "NEW_BEHAVIORSCROLL_LEFT_RIGHT";
+        };
     };
 
     keymap {
@@ -112,10 +121,10 @@
 
         layer_1 {
             bindings = <
-&kp F1          &kp F2  &kp F3  &kp F4  &kp F5                        &trans             &trans    &kp UP    &kp LG(TAB)  &kp LG(D)
-&kp F6          &kp F7  &kp F8  &kp F9  &kp F10  &trans      &trans   &kp LS(NUMBER_7)   &kp LEFT  &kp DOWN  &kp RIGHT    &trans
-&trans          &trans  &trans  &trans  &trans   &trans      &trans   &kp LS(SEMICOLON)  &mkp MB3  &mkp MB1  &mkp MB2     &kp RCTRL
-&kp LEFT_SHIFT  &trans  &trans  &trans  &trans   &kp BSPC    &kp DEL  &trans                                              &kp ESC
+&kp F1          &kp F2  &kp F3  &kp F4  &kp F5                                  &trans  &trans    &kp UP    &trans     &kp LG(D)
+&kp F6          &kp F7  &kp F8  &kp F9  &kp F10  &trans      &kp LS(NUMBER_7)   &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans
+&trans          &trans  &trans  &trans  &trans   &trans      &kp LS(SEMICOLON)  &trans  &mkp MB3  &mkp MB1  &mkp MB2   &kp RCTRL
+&kp LEFT_SHIFT  &trans  &trans  &trans  &trans   &kp BSPC    &kp DEL            &trans                                 &kp ESC
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -129,7 +138,7 @@
 &kp LEFT_SHIFT    &kp UNDER        &kp KP_DOT       &trans           &trans          &kp BACKSPACE    &kp DELETE        &trans                                                             &kp ESCAPE
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&new_behaviorscroll_left_right>;
         };
 
         layer_3 {
@@ -152,15 +161,6 @@
             >;
 
             sensor-bindings = <&scroll_up_down>;
-        };
-
-        layer_6 {
-            bindings = <
-&trans          &trans  &trans  &trans  &trans                    &kp LS(INTERNATIONAL_1)  &kp SLASH  &trans  &trans  &trans
-&kp PIPE2       &trans  &trans  &trans  &trans  &trans    &trans  &trans                   &trans     &trans  &trans  &trans
-&trans          &trans  &trans  &trans  &trans  &trans    &trans  &trans                   &trans     &trans  &trans  &trans
-&kp LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans    &trans  &trans                                              &trans
-            >;
         };
     };
 };
