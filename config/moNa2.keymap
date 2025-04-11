@@ -87,13 +87,15 @@
             tapping-term-ms = <200>;
         };
 
-       mouse_scroll: mouse_wheel_scrl{
-         compatible = "zmk,behavior-sensor-rotate-var";
-         #sensor-binding-cells = <2>;
-         bindings = <&msc>, <&msc>;
-         // 追加: スクロールのタップ時間を設定 (20ms)
-         tap-ms = <20>;
-     };
+        mouse_scroll: mouse_wheel_scrl {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
+
+            // 追加: スクロールのタップ時間を設定 (20ms)
+
+            tap-ms = <20>;
+        };
     };
 
     keymap {
@@ -107,7 +109,7 @@
 &kp LEFT_SHIFT  &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 LANG2  &lt 2 SPACE  &lt 1 LANG1       &lt 1 BACKSPACE  &lt 2 ENTER                             &mt LEFT_SHIFT SLASH
             >;
 
-            sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&mouse_scroll SCRL_DOWN SCRL_UP>;
         };
 
         layer_1 {
@@ -118,7 +120,7 @@
 &kp LEFT_SHIFT  &trans   &trans   &trans    &trans   &kp BSPC    &kp DEL            &trans                                 &kp ESC
             >;
 
-            sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&mouse_scroll SCRL_DOWN SCRL_UP>;
         };
 
         layer_2 {
@@ -129,7 +131,7 @@
 &kp LEFT_SHIFT    &kp UNDER        &kp KP_DOT       &trans           &trans          &kp BACKSPACE    &kp DELETE        &trans                                                             &kp ESCAPE
             >;
 
-            sensor-bindings = <&mouse_scroll SCRL_LEFT SCRL_RIGHT>;
+            sensor-bindings = <&mouse_scroll SCRL_RIGHT SCRL_LEFT>;
         };
 
         layer_3 {
@@ -140,7 +142,7 @@
 &kp LEFT_SHIFT  &kp LG(L)      &kp LA(LC(DELETE))  &trans         &trans         &kp BACKSPACE    &kp DEL  &trans                                                &kp ESCAPE
             >;
 
-            sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&mouse_scroll SCRL_DOWN SCRL_UP>;
         };
 
         bluetooth {
@@ -151,7 +153,7 @@
 &trans       &trans  &trans  &trans  &trans  &trans    &trans  &trans                                                  &bt BT_CLR_ALL
             >;
 
-            sensor-bindings = <&mouse_scroll SCRL_UP SCRL_DOWN>;
+            sensor-bindings = <&mouse_scroll SCRL_DOWN SCRL_UP>;
         };
     };
 };
