@@ -79,7 +79,7 @@
         icloud: icloud {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LANG2 &kp LS(F) &kp I &kp R &kp E &kp LS(N2) &kp NUMBER_1 &kp NUMBER_1 &kp N9 &kp LS(N2) &kp LS(NUMBER_8) &kp K &kp E &kp T &kp LS(A) &kp LS(NUMBER_9)>;
+            bindings = <&kp LANG2 &kp LS(F) &kp I &kp R &kp E &kp LS(N2) &kp NUMBER_1 &kp NUMBER_1 &kp N9 &kp LS(N2) &kp LS(NUMBER_8) &kp K &kp E &kp T &kp LS(A) &kp LS(NUMBER_9) &kp RET>;
             label = "ICLOUD";
         };
     };
