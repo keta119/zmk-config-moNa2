@@ -75,6 +75,13 @@
             bindings = <&kp LANG2 &kp NUMBER_5 &kp NUMBER_1 &kp NUMBER_6 &kp LS(F) &kp I &kp R &kp E &kp LEFT_BRACKET &kp ENTER>;
             label = "LOGIN";
         };
+
+        icloud: icloud {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(F) &kp I &kp R &kp E &kp DOUBLE_QUOTES &kp NUMBER_1 &kp NUMBER_1 &kp N9 &kp DOUBLE_QUOTES &kp LEFT_PARENTHESIS &kp K &kp E &kp T &kp LS(A) &kp RIGHT_PARENTHESIS>;
+            label = "ICLOUD";
+        };
     };
 
     behaviors {
@@ -116,7 +123,7 @@
             bindings = <
 &kp F1          &kp F2   &kp F3   &kp F4    &kp F5                                  &trans  &trans    &kp UP    &trans     &kp LG(D)
 &kp F6          &kp F7   &kp F8   &kp F9    &kp F10  &trans      &kp LS(NUMBER_7)   &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans
-&trans          &menkyo  &kousei  &syokuin  &login   &trans      &kp LS(SEMICOLON)  &trans  &mkp MB3  &mkp MB1  &mkp MB2   &kp RCTRL
+&icloud         &menkyo  &kousei  &syokuin  &login   &trans      &kp LS(SEMICOLON)  &trans  &mkp MB3  &mkp MB1  &mkp MB2   &kp RCTRL
 &kp LEFT_SHIFT  &trans   &trans   &trans    &trans   &kp BSPC    &kp DEL            &trans                                 &kp ESC
             >;
 
