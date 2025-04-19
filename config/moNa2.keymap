@@ -89,6 +89,13 @@
             bindings = <&kp ENTER &kp LANGUAGE_2 &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SPACE &kp F5 &kp SPACE &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp ENTER &kp LANG1>;
             label = "ADD_TIME_DATE";
         };
+
+        dot: dot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LANG2 &kp DOT>;
+            label = "DOT";
+        };
     };
 
     behaviors {
@@ -131,7 +138,7 @@
 &kp F1          &kp F2   &kp F3   &kp F4    &kp F5                                &kp KP_NUMLOCK    &kp KP_NUMBER_7  &kp KP_N8        &kp KP_NUMBER_9  &kp KP_ASTERISK
 &kp F6          &kp F7   &kp F8   &kp F9    &kp F10  &trans      &trans           &kp SINGLE_QUOTE  &kp KP_NUMBER_4  &kp KP_N5        &kp KP_N6        &kp KP_SUBTRACT
 &add_time_date  &menkyo  &kousei  &syokuin  &login   &icloud     &trans           &kp KP_SLASH      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_PLUS
-&kp LEFT_SHIFT  &trans   &trans   &trans    &trans   &kp BSPC    &kp KP_NUMBER_0  &kp DOT                                                              &kp BACKSPACE
+&kp LEFT_SHIFT  &trans   &trans   &trans    &trans   &kp BSPC    &kp KP_NUMBER_0  &dot                                                                 &kp BACKSPACE
             >;
 
             sensor-bindings = <&mouse_scroll SCRL_DOWN SCRL_UP>;
