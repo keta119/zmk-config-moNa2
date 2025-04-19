@@ -82,6 +82,13 @@
             bindings = <&kp LANG2 &kp LS(F) &kp I &kp R &kp E &kp LS(N2) &kp NUMBER_1 &kp NUMBER_1 &kp N9 &kp LS(N2) &kp LS(NUMBER_8) &kp K &kp E &kp T &kp LS(A) &kp LS(NUMBER_9) &kp RET>;
             label = "ICLOUD";
         };
+
+        add_time_date: add_time_date {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ENTER &kp LANGUAGE_2 &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SPACE &kp F5 &kp SPACE &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp SLASH &kp ENTER &kp LANG1>;
+            label = "ADD_TIME_DATE";
+        };
     };
 
     behaviors {
@@ -121,10 +128,10 @@
 
         layer_1 {
             bindings = <
-&kp F1          &kp F2   &kp F3   &kp F4    &kp F5                                  &trans  &trans    &kp UP    &trans     &kp LG(D)
-&kp F6          &kp F7   &kp F8   &kp F9    &kp F10  &trans      &kp LS(NUMBER_7)   &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans
-&icloud         &menkyo  &kousei  &syokuin  &login   &trans      &kp LS(SEMICOLON)  &trans  &mkp MB3  &mkp MB1  &mkp MB2   &kp RCTRL
-&kp LEFT_SHIFT  &trans   &trans   &trans    &trans   &kp BSPC    &kp DEL            &trans                                 &kp ESC
+&kp F1          &kp F2   &kp F3   &kp F4    &kp F5                                &kp KP_NUMLOCK    &kp KP_NUMBER_7  &kp KP_N8        &kp KP_NUMBER_9  &kp KP_ASTERISK
+&kp F6          &kp F7   &kp F8   &kp F9    &kp F10  &trans      &trans           &kp SINGLE_QUOTE  &kp KP_NUMBER_4  &kp KP_N5        &kp KP_N6        &kp KP_SUBTRACT
+&add_time_date  &menkyo  &kousei  &syokuin  &login   &icloud     &trans           &kp KP_SLASH      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_PLUS
+&kp LEFT_SHIFT  &trans   &trans   &trans    &trans   &kp BSPC    &kp KP_NUMBER_0  &kp KP_COMMA                                                         &kp BACKSPACE
             >;
 
             sensor-bindings = <&mouse_scroll SCRL_DOWN SCRL_UP>;
@@ -132,10 +139,10 @@
 
         layer_2 {
             bindings = <
-&kp TAB           &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_NUMLOCK                                     &kp EXCLAMATION   &kp RIGHT_BRACKET  &kp BACKSLASH     &kp DOLLAR  &kp PERCENT
-&kp SINGLE_QUOTE  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_DIVIDE   &trans           &kp LS(NUMBER_3)  &kp QMARK         &kp LS(NUMBER_8)   &kp LS(NUMBER_9)  &kp INT3    &kp LS(INTERNATIONAL_1)
-&kp KP_NUMBER_0   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_MINUS    &trans           &kp LS(APOS)      &kp LS(NUMBER_6)  &kp LS(NUMBER_2)   &kp COMMA         &kp PERIOD  &kp LEFT_BRACKET
-&kp LEFT_SHIFT    &kp UNDER        &kp KP_DOT       &trans           &trans          &kp BACKSPACE    &kp DELETE        &trans                                                             &kp ESCAPE
+&kp TAB         &trans  &kp RIGHT_BRACKET  &kp BACKSLASH     &kp LS(APOS)                                   &kp EXCLAMATION   &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp DOLLAR  &kp PERCENT
+&trans          &trans  &kp LS(NUMBER_8)   &kp LS(NUMBER_9)  &kp COLON         &kp SEMI         &trans      &kp QMARK         &kakko            &dai_kakko        &kp INT3    &kp LS(INTERNATIONAL_1)
+&trans          &trans  &trans             &trans            &kp SINGLE_QUOTE  &trans           &trans      &kp LS(NUMBER_6)  &trans            &kp COMMA         &kp PERIOD  &kp LEFT_BRACKET
+&kp LEFT_SHIFT  &trans  &trans             &trans            &trans            &kp BACKSPACE    &kp DELETE  &trans                                                            &kp ESCAPE
             >;
 
             sensor-bindings = <&mouse_scroll SCRL_RIGHT SCRL_LEFT>;
