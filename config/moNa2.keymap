@@ -96,6 +96,14 @@
             bindings = <&kp LANG2 &kp DOT>;
             label = "DOT";
         };
+
+        app_close: app_close {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(F4)>, <&macro_tap_time 200>, <&kp N>;
+
+            label = "APP_CLOSE";
+        };
     };
 
     behaviors {
@@ -157,10 +165,10 @@
 
         layer_3 {
             bindings = <
-&kp LG(LEFT)    &kp LG(RIGHT)  &kp LA(LEFT)        &kp LA(RIGHT)  &kp LS(LG(S))                            &kp PAGE_UP    &kp HOME  &kp UP_ARROW    &kp LG(TAB)  &kp LG(D)
-&kp LA(F4)      &kp N          &kp LA(O)           &kp LC(F)      &trans         &trans           &trans   &kp PAGE_DOWN  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT    &trans
-&kp LC(Z)       &kp LC(X)      &kp LC(C)           &kp LC(V)      &trans         &trans           &trans   &kp END        &mkp MB3  &mkp MB1        &mkp MB2     &kp LCTRL
-&kp LEFT_SHIFT  &kp LG(L)      &kp LA(LC(DELETE))  &trans         &trans         &kp BACKSPACE    &kp DEL  &trans                                                &kp ESCAPE
+&app_close          &trans         &kp LA(LEFT)        &kp LA(RIGHT)  &kp LS(LG(S))                            &kp PAGE_UP    &kp HOME  &kp UP_ARROW    &kp LG(TAB)  &kp LG(D)
+&kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &kp LA(O)           &kp LC(F)      &trans         &trans           &trans   &kp PAGE_DOWN  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT    &trans
+&kp LC(Z)           &kp LC(X)      &kp LC(C)           &kp LC(V)      &trans         &trans           &trans   &kp END        &mkp MB3  &mkp MB1        &mkp MB2     &kp LCTRL
+&kp LEFT_SHIFT      &kp LG(L)      &kp LA(LC(DELETE))  &trans         &trans         &kp BACKSPACE    &kp DEL  &trans                                                &kp ESCAPE
             >;
 
             sensor-bindings = <&mouse_scroll SCRL_DOWN SCRL_UP>;
